@@ -1,63 +1,14 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* App.css */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
+/* App container */
 .app {
-  width: 100%;
+  padding: 20px;
   min-height: 100vh;
   background-color: #f4f5f8;
 }
 
-/* Header Styles */
+/* Header styles */
 .header {
-  padding: 16px 24px;
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   position: relative;
+  margin-bottom: 24px;
 }
 
 .display-button {
@@ -65,29 +16,24 @@
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
+  background: white;
   border: 1px solid #e0e0e0;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  background-color: white;
   font-size: 14px;
-}
-
-.display-button:hover {
-  background-color: #f5f5f5;
 }
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 24px;
-  background-color: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  left: 0;
   margin-top: 8px;
-  min-width: 220px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 16px;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-item {
@@ -101,43 +47,34 @@
   margin-bottom: 0;
 }
 
-.dropdown-item span {
-  color: #666;
-  font-size: 14px;
-}
-
 .dropdown-item select {
   padding: 4px 8px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
-  outline: none;
-  font-size: 14px;
   min-width: 120px;
 }
 
-/* Board Styles */
+/* Board layout */
 .board {
   display: flex;
   gap: 20px;
-  padding: 20px;
-  overflow-x: auto;
   align-items: flex-start;
+  overflow-x: auto;
+  padding-bottom: 20px;
 }
 
-/* Column Styles */
+/* Column styles */
 .column {
-  min-width: 300px;
-  background-color: #f4f5f8;
+  flex: 0 0 320px;
+  background: #f4f5f8;
   border-radius: 8px;
-  flex: 1;
 }
 
 .column-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 12px;
-  font-size: 14px;
+  align-items: center;
+  padding: 12px 16px;
 }
 
 .column-header-left {
@@ -146,18 +83,16 @@
   gap: 8px;
 }
 
-.column-icon {
-  font-size: 16px;
-}
-
 .column-header h3 {
-  color: #333;
+  margin: 0;
+  font-size: 14px;
   font-weight: 500;
+  text-transform: capitalize;
 }
 
 .ticket-count {
-  color: #666;
-  font-size: 13px;
+  color: #6b6f76;
+  font-size: 14px;
 }
 
 .column-actions {
@@ -166,17 +101,13 @@
 }
 
 .icon-button {
-  border: none;
   background: none;
-  cursor: pointer;
-  color: #666;
-  font-size: 16px;
+  border: none;
   padding: 4px;
-  border-radius: 4px;
-}
-
-.icon-button:hover {
-  background-color: #e0e0e0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .column-content {
@@ -186,12 +117,12 @@
   gap: 8px;
 }
 
-/* Card Styles */
+/* Card styles */
 .card {
-  background-color: white;
+  background: white;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 16px;
 }
 
 .card-header {
@@ -202,21 +133,20 @@
 }
 
 .ticket-id {
-  color: #666;
-  font-size: 13px;
+  color: #8d8d8d;
+  font-size: 14px;
 }
 
 .user-avatar {
   width: 24px;
   height: 24px;
+  background: #f4f5f8;
   border-radius: 50%;
-  background-color: #e0e0e0;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   font-size: 12px;
-  color: #666;
+  position: relative;
 }
 
 .status-indicator {
@@ -224,62 +154,81 @@
   height: 8px;
   border-radius: 50%;
   position: absolute;
-  bottom: -1px;
-  right: -1px;
+  bottom: 0;
+  right: 0;
   border: 2px solid white;
 }
 
 .status-indicator.available {
-  background-color: #4caf50;
+  background: #4caf50;
 }
 
 .status-indicator.away {
-  background-color: #ffc107;
+  background: #ffc107;
 }
 
 .card-title {
   font-size: 14px;
   margin-bottom: 8px;
-  color: #333;
   display: flex;
-  gap: 6px;
   align-items: flex-start;
-  line-height: 1.4;
+  gap: 8px;
 }
 
 .priority-icon {
-  font-size: 12px;
+  flex-shrink: 0;
 }
 
 .card-tags {
   display: flex;
   gap: 8px;
+  align-items: center;
 }
 
 .feature-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   padding: 2px 8px;
+  background: #f4f5f8;
   border-radius: 4px;
   font-size: 12px;
-  background-color: #f4f5f8;
-  color: #666;
-  border: 1px solid #e0e0e0;
+  color: #6b6f76;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .board {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 12px;
-  }
+/* Scrollbar styling */
+.board::-webkit-scrollbar {
+  height: 8px;
+}
 
-  .column {
-    min-width: auto;
-  }
+.board::-webkit-scrollbar-track {
+  background: #f4f5f8;
+}
 
-  .dropdown-menu {
-    left: 12px;
-    right: 12px;
-    width: auto;
-  }
+.board::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+.board::-webkit-scrollbar-thumb:hover {
+  background: #d0d0d0;
+}
+
+.column-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.column-icon {
+  margin-right: 4px;
+  margin-top: 4px;
+}
+
+h3 {
+  margin: 0;
+  margin-right: 8px;
+}
+
+.ticket-count {
+  font-weight: bold;
 }
